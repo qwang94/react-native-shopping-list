@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { StyleSheet, TextInput, View, Modal } from 'react-native';
+import { StyleSheet, View, Modal } from 'react-native';
 import ButtonComponent from './ButtonComponent';
+import InputComponent from './InputComponent';
 
 const AddProduct = ({submitHandler, displayModal, cancelModal}) => {
     const [product, setProduct] = useState('');
 
     const inputHandler = (val) => {
-        setProduct(val)
+        const regex = /[^a-z]/gi;
+        setProduct(val.replace(regex, ''));
     }
 
     const handleClick = () => {
@@ -24,12 +26,14 @@ const AddProduct = ({submitHandler, displayModal, cancelModal}) => {
             animationType='slide'
         >
             <View style={styles.inputContainer}>
-                <TextInput
+                <InputComponent
                     style={styles.textInput}
                     placeholder="Nouveau produit"
                     onChangeText={inputHandler}
                     value={product}
+                    maxLength={10}
                 />
+
                 <View style={styles.buttonContainer}>
                     <ButtonComponent 
                         onPressHandler={ handleClick }
@@ -52,12 +56,13 @@ const styles = StyleSheet.create({
         padding: 24
       },
     textInput: {
-        borderColor: 'grey',
-        borderWidth: 1,
+        borderColor: '',
         padding: 5,
-        paddingLeft: 9,
+        textAlign: 'center',
         fontSize: 18,
-        marginBottom: 9
+        marginBottom: 9,
+        borderRadius: 30,
+        height: 50
     },
     buttonContainer: {
         flexDirection: 'row',
@@ -75,4 +80,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default AddProduct;
+export default AddProduct

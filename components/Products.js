@@ -16,16 +16,14 @@ const Products = ({name, deleteProduct, idString}) => {
 const styles = StyleSheet.create({
     items: {
         marginTop: 10,
+        backgroundColor: 'red',
+        borderRadius: 15
     },
     element: {
-        backgroundColor: 'red',
-        borderWidth: 3,
         color: '#fff',
-        borderRadius: 6,
         padding: 20,
         fontSize: 17,
         marginVertical: 6,
-        borderColor: "#fff"
     }
 });
 
