@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Modal } from 'react-native';
+import BodyText from './BodyText';
 import ButtonComponent from './ButtonComponent';
 import InputComponent from './InputComponent';
+import AppStyles from '../constants/AppStyles';
+import TitleText from './TitleText';
 
 const AddProduct = ({submitHandler, displayModal, cancelModal}) => {
     const [product, setProduct] = useState('');
@@ -26,6 +29,9 @@ const AddProduct = ({submitHandler, displayModal, cancelModal}) => {
             animationType='slide'
         >
             <View style={styles.inputContainer}>
+
+                <TitleText>Veuillez indiquer un produit</TitleText>
+                <BodyText>traverseDependencies (C:\Users\ASUS\Desktop\Projet Perso\Udemy\react native\shopping-list\node_modules\met</BodyText>
                 <InputComponent
                     style={styles.textInput}
                     placeholder="Nouveau produit"

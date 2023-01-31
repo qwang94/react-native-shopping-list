@@ -5,4 +5,5 @@ export default {
     sucess: 'seagreen',
     warning: 'tomato',
     secondary: 'lightgrey',
+    grey: '#333'
 }

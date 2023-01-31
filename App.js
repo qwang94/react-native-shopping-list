@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     height: 100
   },
   addProductBtn: {
-    backgroundColor: "#e15",
+    backgroundColor: Colors.sucess,
     padding: 20,
     borderRadius: 30,
     borderWidth: 3,

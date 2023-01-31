@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import Colors from '../constants/colors';
 
 const Products = ({name, deleteProduct, idString}) => {
     return (
@@ -7,6 +9,11 @@ const Products = ({name, deleteProduct, idString}) => {
             onPress={() =>  deleteProduct(idString)}
         >
             <View style={styles.items}>
+                <FontAwesome
+                    name="remove"
+                    size={29}
+                    color={Colors.white}
+                />
                 <Text style={styles.element}>{name}</Text>
             </View>
         </Pressable>
@@ -16,14 +23,16 @@ const Products = ({name, deleteProduct, idString}) => {
 const styles = StyleSheet.create({
     items: {
         marginTop: 10,
-        backgroundColor: 'red',
-        borderRadius: 15
+        backgroundColor: Colors.danger,
+        borderRadius: 15,
+        flexDirection: 'row',
+        padding: 15,
+        alignItems: 'center'
     },
     element: {
         color: '#fff',
-        padding: 20,
         fontSize: 17,
-        marginVertical: 6,
+        marginLeft: 20
     }
 });
 
